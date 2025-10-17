@@ -71,7 +71,20 @@ body {
     
 
 }
-
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+.icon-net {
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    vertical-align: middle;
+}
 .header-actions {
     display: flex;
     align-items: center;
@@ -80,7 +93,7 @@ body {
 
 .logo {
     font-weight: 900;
-    font-size: 1.25rem;
+    font-size: 1.50rem;
     letter-spacing: 0.5px;
 }
 
@@ -228,7 +241,7 @@ body {
 .price span {
     font-size: 2.7rem;
     font-weight: 900; 
-    display: block; 
+    display: inline; 
     line-height: 1.2;
 }
 
@@ -251,7 +264,7 @@ body {
 }
 
 .btn.primary:hover {
-    background-color: var(--green-button-hover); 
+    background-color: rgb(126, 255, 126); 
 }
 
 /* Setas de navegação */
@@ -298,7 +311,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linha clara */
     padding-bottom: 20px;
     margin-bottom: 10px;
@@ -327,7 +340,8 @@ body {
 }
 
 .social-links a:hover {
-    color: var(--blue-point); /* Hover diferente */
+    color: rgb(145, 255, 169);
+    font-size: 1.8rem;
 }
 
 .footer-bottom {
@@ -338,6 +352,7 @@ body {
 .footer-bottom p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.8rem;
+    transition: 2s;
 }
 
 /* ------------------- Responsividade ------------------- */
@@ -362,21 +377,30 @@ body {
 
 @media (max-width: 650px) {
     .header-content {
-        flex-direction: column;
-    }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    } 
     
     .header-actions {
-        margin-top: 10px;
-        flex-direction: column;
+        display: flex;
+        align-items: center; 
+        gap: 15px;
     }
     
     .phone-link, .btn-theme-toggle {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 5px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        
+}
+    .phone-link i {
+        margin-right: 5px;
     }
 }
-
 @media (max-width: 576px) {
     .footer-content {
         flex-direction: column;
