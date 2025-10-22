@@ -43,7 +43,16 @@ body {
     line-height: 1.6;
     background-color: var(--body-bg); /* Usa variável de tema */
     color: var(--text-primary); /* Usa variável de tema */
-    transition: background-color 0.3s, color 0.3s;
+    transition: transform 1s ease, box-shadow 0.3s ease;
+}
+body:hover {
+    transform: translateY(-5px); 
+    
+    /* Efeito de sombra para destacar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    
+    /* Opcional: Aumentar o brilho/cor do fundo ou borda */
+    border-color: #02b14b;
 }
 
 /* ------------------- Header ------------------- */
@@ -90,7 +99,68 @@ body {
     align-items: center;
     gap: 15px; /* Espaço entre o botão de tema e o telefone */
 }
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background: #fdfdfd;
+}
+.menu {
+    /* Mude as propriedades de posicionamento fixo para estático ou relativo */
+    /* Isso remove ele do canto inferior direito */
+    position: static; /* Volta a ser um elemento normal no fluxo do documento */
+    bottom: auto; /* Remove a posição inferior */
+    right: auto; /* Remove a posição direita */
+
+    /* Mantenha o estilo visual do botão, se desejar */
+    background: #02b14b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    /* Adicione uma margem à esquerda se precisar de mais espaço em relação ao logo */
+    /* margin-left: 20px; */ 
+}
+
+/* O resto do CSS do hambúrguer pode ser mantido */
+.hamburguer {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    width: 30px;
+    height: 3px;
+    border-radius: 20px;
+    top: 29px; /* Mantenha para centralizar verticalmente */
+    left: 15px; /* Mantenha para centralizar horizontalmente */
+    transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+    background: #ffffff;
+    content: '';
+    display: flex;
+    width: 30px;
+    height: 3px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before {
+    top: -10px;
+}
+
+.hamburguer:after {
+    bottom: -10px;
+}
+input {
+  display: flex;
+}
 .logo {
     font-weight: 900;
     font-size: 1.50rem;
@@ -390,6 +460,8 @@ body {
         align-items: center; 
         gap: 15px;
     }
+
+   
     
     .phone-link, .btn-theme-toggle {
         text-decoration: none;
